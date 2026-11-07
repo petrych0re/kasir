@@ -1,62 +1,76 @@
-nama,kategori,merek,satuan,harga_jual,barcode
-Beras medium 5 kg,Bahan pokok,Umum,karung,75000,
-Beras premium 5 kg,Bahan pokok,Umum,karung,85000,
-Beras medium 1 kg,Bahan pokok,Umum,kg,15000,
-Gula pasir 1 kg,Bahan pokok,Gulaku,kg,18000,
-Gula pasir curah 1 kg,Bahan pokok,Umum,kg,17000,
-Minyak goreng pouch 1 L,Bahan pokok,Bimoli,pouch,19000,
-Minyak goreng 2 L,Bahan pokok,SunCo,pouch,38000,
-Tepung terigu 1 kg,Bahan pokok,Segitiga Biru,kg,14000,
-Tepung tapioka 500 g,Bahan pokok,Cap Pak Tani,bungkus,8000,
-Garam 500 g,Bahan pokok,Dోలina,bungkus,4000,
-Telur ayam 1 kg,Bahan pokok,Umum,kg,29000,
-Mie instan goreng,Makanan,Indomie,bungkus,3500,
-Mie instan kuah,Makanan,Indomie,bungkus,3200,
-Mie instan premium,Makanan,Sedaap,bungkus,3500,
-Sarden kaleng 155 g,Makanan,ABC,kaleng,11000,
-Kornet sapi 198 g,Makanan,Pronas,kaleng,25000,
-Susu kental manis 370 g,Minuman,Frisian Flag,kaleng,14000,
-Susu UHT 1 L,Minuman,Ultra Milk,kotak,21000,
-Susu UHT 250 ml,Minuman,Ultra Milk,kotak,6500,
-Kopi sachet,Makanan,Good Day,sachet,2000,
-Kopi bubuk pueden 165 g,Makanan, kapal api,bungkus,18000,
-Teh celup 25 kantong,Minuman,SariWangi,kotak,10000,
-Teh tubruk 40 g,Minuman,2 Tang,bungkus,6000,
-Sirup 460 ml,Minuman,Marjan,botol,19000,
-Air mineral 600 ml,Minuman,Aqua,botol,4000,
-Air mineral 1.5 L,Minuman,Aqua,botol,7000,
-Kecap manis 135 ml,Bumbu,Bango,botol,9000,
-Kecap manis 520 ml,Bumbu,ABC,botol,19000,
-Saus sambal 135 ml,Bumbu,ABC,botol,9000,
-Saus tomat 135 ml,Bumbu,ABC,botol,8500,
-Santan instan 65 ml,Bumbu,Sun Kara,sachet,3500,
-Kaldu bubuk 100 g,Bumbu,Royco,renceng,7000,
-Penyedap rasa 250 g,Bumbu,Masako,bungkus,9000,
-Merica bubuk sachet,Bumbu,Koepoe Koepoe,sachet,2000,
-Ketumbar bubuk sachet,Bumbu,Koepoe Koepoe,sachet,2000,
-Bawang putih 1 kg,Bumbu,Umum,kg,38000,
-Bawang merah 1 kg,Bumbu,Umum,kg,40000,
-Cabai merah 1 kg,Bumbu,Umum,kg,45000,
-Sabun mandi batang,Kebersihan,Lifebuoy,batang,4500,
-Sabun mandi cair 400 ml,Kebersihan,Lifebuoy,botol,22000,
-Sampo sachet,Kebersihan,Pantene,sachet,1000,
-Sampo 170 ml,Kebersihan,Clear,botol,23000,
-Pasta gigi 120 g,Kebersihan,Pepsodent,tube,12000,
-Sikat gigi,Kebersihan,Formula,pcs,7000,
-Deterjen bubuk 800 g,Kebersihan,Rinso,bungkus,18000,
-Deterjen cair 700 ml,Kebersihan,Molto, pouch,17000,
-Pelembut pakaian 900 ml,Kebersihan,Molto, pouch,16000,
-Pembersih lantai 800 ml,Kebersihan,Super Pell,botol,14000,
-Sabun cuci piring 650 ml,Kebersihan,Sunlight,pouch,15000,
-Pemutih pakaian 500 ml,Kebersihan,Bayclin,botol,12000,
-Tisu wajah 200 lembar,Rumah tangga,Paseo,bungkus,12000,
-Tisu toilet,Rumah tangga,Umum,roll,7000,
-Pembalut isi 8,Kebutuhan pribadi,Charm,bungkus,12000,
-Popok bayi isi 20,Kebutuhan pribadi,MamyPoko,pak,35000,
-Baterai AA isi 2,Rumah tangga,ABC,pak,7000,
-Korek api gas,Rumah tangga,Umum,pcs,5000,
-Kerupuk mentah 250 g,Camilan,Umum,bungkus,9000,
-Biskuit kaleng,Camilan,Khong Guan,kaleng,28000,
-Wafer cokelat,Camilan,Tango,bungkus,3000,
-Keripik kentang,Camilan,Qtela,bungkus,8000,
-Permen sachet,Camilan,Relaxa,bungkus,5000
+barcode,nama,kategori,satuan,merek,harga_jual,gambar_url
+"KS000001","Beras medium 5 kg","Bahan pokok","karung","Lokal","76000","https://placehold.co/320x320/png?text=Beras%20medium%205%20kg"
+"KS000002","Beras premium 5 kg","Bahan pokok","karung","Premium","89000","https://placehold.co/320x320/png?text=Beras%20premium%205%20kg"
+"KS000003","Beras medium 10 kg","Bahan pokok","karung","Lokal","151000","https://placehold.co/320x320/png?text=Beras%20medium%2010%20kg"
+"KS000004","Beras premium 10 kg","Bahan pokok","karung","Premium","174000","https://placehold.co/320x320/png?text=Beras%20premium%2010%20kg"
+"KS000005","Beras 1 kg","Bahan pokok","kg","Curah","15500","https://placehold.co/320x320/png?text=Beras%201%20kg"
+"KS000006","Gula pasir 1 kg","Bahan pokok","kg","Gulaku","18000","https://placehold.co/320x320/png?text=Gula%20pasir%201%20kg"
+"KS000007","Gula pasir 500 g","Bahan pokok","pcs","Gulaku","9500","https://placehold.co/320x320/png?text=Gula%20pasir%20500%20g"
+"KS000008","Minyak goreng 1 L","Bahan pokok","pouch","Minyakita","17000","https://placehold.co/320x320/png?text=Minyak%20goreng%201%20L"
+"KS000009","Minyak goreng premium 1 L","Bahan pokok","pouch","Bimoli","20500","https://placehold.co/320x320/png?text=Minyak%20goreng%20premium%201%20L"
+"KS000010","Minyak goreng 2 L","Bahan pokok","pouch","Bimoli","39000","https://placehold.co/320x320/png?text=Minyak%20goreng%202%20L"
+"KS000011","Tepung terigu 1 kg","Bahan pokok","kg","Segitiga Biru","14000","https://placehold.co/320x320/png?text=Tepung%20terigu%201%20kg"
+"KS000012","Tepung terigu 500 g","Bahan pokok","pcs","Segitiga Biru","8000","https://placehold.co/320x320/png?text=Tepung%20terigu%20500%20g"
+"KS000013","Tepung tapioka 500 g","Bahan pokok","pcs","Rose Brand","8500","https://placehold.co/320x320/png?text=Tepung%20tapioka%20500%20g"
+"KS000014","Tepung beras 500 g","Bahan pokok","pcs","Rose Brand","9000","https://placehold.co/320x320/png?text=Tepung%20beras%20500%20g"
+"KS000015","Garam halus 500 g","Bumbu","pcs","Refina","5000","https://placehold.co/320x320/png?text=Garam%20halus%20500%20g"
+"KS000016","Garam bata 250 g","Bumbu","pcs","Dolphin","4500","https://placehold.co/320x320/png?text=Garam%20bata%20250%20g"
+"KS000017","Telur ayam negeri 1 kg","Bahan pokok","kg","Curah","30000","https://placehold.co/320x320/png?text=Telur%20ayam%20negeri%201%20kg"
+"KS000018","Telur ayam negeri 1/2 kg","Bahan pokok","kg","Curah","15500","https://placehold.co/320x320/png?text=Telur%20ayam%20negeri%201%2F2%20kg"
+"KS000019","Mie instan goreng","Makanan","pcs","Indomie","3500","https://placehold.co/320x320/png?text=Mie%20instan%20goreng"
+"KS000020","Mie instan kuah ayam bawang","Makanan","pcs","Indomie","3200","https://placehold.co/320x320/png?text=Mie%20instan%20kuah%20ayam%20bawang"
+"KS000021","Mie instan cup","Makanan","cup","Pop Mie","6500","https://placehold.co/320x320/png?text=Mie%20instan%20cup"
+"KS000022","Sarden kaleng 155 g","Makanan","kaleng","ABC","12000","https://placehold.co/320x320/png?text=Sarden%20kaleng%20155%20g"
+"KS000023","Kornet sapi 198 g","Makanan","kaleng","Pronas","26000","https://placehold.co/320x320/png?text=Kornet%20sapi%20198%20g"
+"KS000024","Susu kental manis sachet","Minuman","sachet","Frisian Flag","2500","https://placehold.co/320x320/png?text=Susu%20kental%20manis%20sachet"
+"KS000025","Susu kental manis 370 g","Minuman","kaleng","Indomilk","14000","https://placehold.co/320x320/png?text=Susu%20kental%20manis%20370%20g"
+"KS000026","Susu UHT 1 L","Minuman","karton","Ultra Milk","21000","https://placehold.co/320x320/png?text=Susu%20UHT%201%20L"
+"KS000027","Susu UHT 250 ml","Minuman","pcs","Ultra Milk","6000","https://placehold.co/320x320/png?text=Susu%20UHT%20250%20ml"
+"KS000028","Kopi bubuk 165 g","Minuman","bungkus","Kapal Api","18000","https://placehold.co/320x320/png?text=Kopi%20bubuk%20165%20g"
+"KS000029","Kopi sachet","Minuman","sachet","Good Day","2000","https://placehold.co/320x320/png?text=Kopi%20sachet"
+"KS000030","Teh celup 25 kantong","Minuman","kotak","Sariwangi","9000","https://placehold.co/320x320/png?text=Teh%20celup%2025%20kantong"
+"KS000031","Teh tubruk 40 g","Minuman","bungkus","Tong Tji","7000","https://placehold.co/320x320/png?text=Teh%20tubruk%2040%20g"
+"KS000032","Air mineral 600 ml","Minuman","botol","Aqua","4000","https://placehold.co/320x320/png?text=Air%20mineral%20600%20ml"
+"KS000033","Air mineral 1,5 L","Minuman","botol","Aqua","7000","https://placehold.co/320x320/png?text=Air%20mineral%201%2C5%20L"
+"KS000034","Sirup 460 ml","Minuman","botol","Marjan","23000","https://placehold.co/320x320/png?text=Sirup%20460%20ml"
+"KS000035","Kecap manis 135 ml","Bumbu","botol","Bango","9000","https://placehold.co/320x320/png?text=Kecap%20manis%20135%20ml"
+"KS000036","Kecap manis 520 ml","Bumbu","botol","ABC","18000","https://placehold.co/320x320/png?text=Kecap%20manis%20520%20ml"
+"KS000037","Saus sambal 135 ml","Bumbu","botol","ABC","9000","https://placehold.co/320x320/png?text=Saus%20sambal%20135%20ml"
+"KS000038","Saus tomat 135 ml","Bumbu","botol","ABC","8500","https://placehold.co/320x320/png?text=Saus%20tomat%20135%20ml"
+"KS000039","Santan instan 65 ml","Bumbu","sachet","Kara","4000","https://placehold.co/320x320/png?text=Santan%20instan%2065%20ml"
+"KS000040","Santan instan 200 ml","Bumbu","pcs","Kara","9000","https://placehold.co/320x320/png?text=Santan%20instan%20200%20ml"
+"KS000041","Kaldu bubuk 100 g","Bumbu","bungkus","Royco","9000","https://placehold.co/320x320/png?text=Kaldu%20bubuk%20100%20g"
+"KS000042","Penyedap rasa 100 g","Bumbu","bungkus","Masako","7000","https://placehold.co/320x320/png?text=Penyedap%20rasa%20100%20g"
+"KS000043","Lada bubuk 35 g","Bumbu","sachet","Ladaku","6500","https://placehold.co/320x320/png?text=Lada%20bubuk%2035%20g"
+"KS000044","Ketumbar bubuk 18 g","Bumbu","sachet","Desaku","3000","https://placehold.co/320x320/png?text=Ketumbar%20bubuk%2018%20g"
+"KS000045","Bawang putih 1 kg","Bahan segar","kg","Curah","42000","https://placehold.co/320x320/png?text=Bawang%20putih%201%20kg"
+"KS000046","Bawang merah 1 kg","Bahan segar","kg","Curah","38000","https://placehold.co/320x320/png?text=Bawang%20merah%201%20kg"
+"KS000047","Cabai rawit merah 250 g","Bahan segar","pack","Curah","18000","https://placehold.co/320x320/png?text=Cabai%20rawit%20merah%20250%20g"
+"KS000048","Cabai merah keriting 250 g","Bahan segar","pack","Curah","13000","https://placehold.co/320x320/png?text=Cabai%20merah%20keriting%20250%20g"
+"KS000049","Kentang 1 kg","Bahan segar","kg","Curah","17000","https://placehold.co/320x320/png?text=Kentang%201%20kg"
+"KS000050","Kecap asin 135 ml","Bumbu","botol","ABC","8500","https://placehold.co/320x320/png?text=Kecap%20asin%20135%20ml"
+"KS000051","Margarin 200 g","Bahan makanan","pcs","Blue Band","9000","https://placehold.co/320x320/png?text=Margarin%20200%20g"
+"KS000052","Mentega 200 g","Bahan makanan","pcs","Wijsman","28000","https://placehold.co/320x320/png?text=Mentega%20200%20g"
+"KS000053","Biskuit marie 120 g","Makanan","bungkus","Regal","11000","https://placehold.co/320x320/png?text=Biskuit%20marie%20120%20g"
+"KS000054","Wafer 140 g","Makanan","bungkus","Tango","9000","https://placehold.co/320x320/png?text=Wafer%20140%20g"
+"KS000055","Roti tawar","Makanan","pack","Sari Roti","18000","https://placehold.co/320x320/png?text=Roti%20tawar"
+"KS000056","Kerupuk udang 200 g","Makanan","bungkus","Finna","15000","https://placehold.co/320x320/png?text=Kerupuk%20udang%20200%20g"
+"KS000057","Kacang tanah 500 g","Makanan","pack","Curah","18000","https://placehold.co/320x320/png?text=Kacang%20tanah%20500%20g"
+"KS000058","Sabun mandi batang","Kebersihan","pcs","Lifebuoy","4500","https://placehold.co/320x320/png?text=Sabun%20mandi%20batang"
+"KS000059","Sabun mandi cair 450 ml","Kebersihan","botol","Lifebuoy","24000","https://placehold.co/320x320/png?text=Sabun%20mandi%20cair%20450%20ml"
+"KS000060","Sampo 170 ml","Kebersihan","botol","Pantene","23000","https://placehold.co/320x320/png?text=Sampo%20170%20ml"
+"KS000061","Pasta gigi 120 g","Kebersihan","tube","Pepsodent","14000","https://placehold.co/320x320/png?text=Pasta%20gigi%20120%20g"
+"KS000062","Sikat gigi","Kebersihan","pcs","Formula","7000","https://placehold.co/320x320/png?text=Sikat%20gigi"
+"KS000063","Deterjen bubuk 800 g","Kebersihan","bungkus","Rinso","18000","https://placehold.co/320x320/png?text=Deterjen%20bubuk%20800%20g"
+"KS000064","Deterjen cair 700 ml","Kebersihan","pouch","Rinso","19000","https://placehold.co/320x320/png?text=Deterjen%20cair%20700%20ml"
+"KS000065","Pewangi pakaian 900 ml","Kebersihan","pouch","Molto","18000","https://placehold.co/320x320/png?text=Pewangi%20pakaian%20900%20ml"
+"KS000066","Pembersih lantai 800 ml","Kebersihan","botol","Wipol","16000","https://placehold.co/320x320/png?text=Pembersih%20lantai%20800%20ml"
+"KS000067","Cairan pencuci piring 400 ml","Kebersihan","pouch","Sunlight","9000","https://placehold.co/320x320/png?text=Cairan%20pencuci%20piring%20400%20ml"
+"KS000068","Tisu wajah 200 sheets","Kebersihan","pack","Nice","12000","https://placehold.co/320x320/png?text=Tisu%20wajah%20200%20sheets"
+"KS000069","Pembalut 8 pcs","Kebersihan","pack","Charm","12000","https://placehold.co/320x320/png?text=Pembalut%208%20pcs"
+"KS000070","Popok bayi ukuran M","Kebutuhan bayi","pack","MamyPoko","35000","https://placehold.co/320x320/png?text=Popok%20bayi%20ukuran%20M"
+"KS000071","Baterai AA 2 pcs","Rumah tangga","pack","ABC","9000","https://placehold.co/320x320/png?text=Baterai%20AA%202%20pcs"
+"KS000072","Lampu LED 9 watt","Rumah tangga","pcs","Philips","22000","https://placehold.co/320x320/png?text=Lampu%20LED%209%20watt"
+"KS000073","Korek api gas","Rumah tangga","pcs","Tokai","8000","https://placehold.co/320x320/png?text=Korek%20api%20gas"
+"KS000074","Kantong sampah roll","Rumah tangga","roll","Generic","10000","https://placehold.co/320x320/png?text=Kantong%20sampah%20roll"
+"KS000075","Gas LPG 3 kg","Rumah tangga","tabung","Pertamina","22000","https://placehold.co/320x320/png?text=Gas%20LPG%203%20kg"
