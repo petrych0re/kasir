@@ -61,7 +61,7 @@ class App(tk.Tk):
         self.sv.pack(fill="both",expand=True,padx=10,pady=10)
 
     def make_history(self):
-        ttk.Button(self.hist,text="Ekspor CSV",command=self.export).pack(anchor="e",pad=8)
+        ttk.Button(self.hist,text="Ekspor CSV",command=self.export).pack(anchor="e",padx=8)
         self.hv=ttk.Treeview(self.hist,columns=("id","date","total","paid","change"),show="headings")
         for c,t in [("id","No."),("date","Tanggal"),("total","Total"),("paid","Dibayar"),("change","Kembalian")]:
             self.hv.heading(c,text=t);self.hv.column(c,width=165)
