@@ -1,6 +1,6 @@
 import sqlite3
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, filedialog
 from pathlib import Path
 from datetime import datetime
 import csv
@@ -10,7 +10,11 @@ DB = Path(__file__).with_name("kasir.db")
 def connect():
     c = sqlite3.connect(DB)
     c.row_factory = sqlite3.Row
-    c.execute("CREATE TABLE IF NOT EXISTS products(id INTEGER PRIMARY KEY, barcode TEXT UNIQUE, name TEXT NOT NULL, price INTEGER NOT NULL, stock INTEGER NOT NULL)")
+    c.execute("CREATE TABLE IF NOT EXISTS products(id INTEGER PRIMARY KEY, barcode TEXT UNIQUE, name TEXT NOT NULL, price INTEGER NOT NULL, stock INTEGER NOT NULL, category TEXT DEFAULT '', unit TEXT DEFAULT 'pcs', brand TEXT DEFAULT '')")
+    cols = {row[1] for row in c.execute("PRAGMA table_info(products)")}
+    for col, definition in (("category", "TEXT DEFAULT ''"), ("unit", "TEXT DEFAULT 'pcs'"), ("brand", "TEXT DEFAULT ''")):
+        if col not in cols:
+            c.execute("ALTER TABLE products ADD COLUMN " + col + " " + definition)
     c.execute("CREATE TABLE IF NOT EXISTS sales(id INTEGER PRIMARY KEY, created TEXT, total INTEGER, paid INTEGER, change_due INTEGER)")
     c.execute("CREATE TABLE IF NOT EXISTS sale_items(id INTEGER PRIMARY KEY, sale_id INTEGER, product_id INTEGER, name TEXT, qty INTEGER, price INTEGER, subtotal INTEGER)")
     c.commit()
@@ -55,9 +59,10 @@ class App(tk.Tk):
             ttk.Label(form,text=label).grid(row=0,column=i,padx=5)
             ttk.Entry(form,textvariable=var,width=21).grid(row=1,column=i,padx=5,pady=5)
         ttk.Button(form,text="Simpan",command=self.save_product).grid(row=1,column=4,padx=8)
-        self.sv=ttk.Treeview(self.stock,columns=("barcode","name","price","stock"),show="headings")
-        for c,t in [("barcode","Barcode"),("name","Nama produk"),("price","Harga"),("stock","Stok")]:
-            self.sv.heading(c,text=t);self.sv.column(c,width=180)
+        ttk.Button(form,text="Impor katalog CSV",command=self.import_csv).grid(row=1,column=5,padx=8)
+        self.sv=ttk.Treeview(self.stock,columns=("barcode","name","category","unit","price","stock"),show="headings")
+        for c,t,w in [("barcode","Barcode",100),("name","Nama produk",220),("category","Kategori",130),("unit","Satuan",80),("price","Harga",120),("stock","Stok",70)]:
+            self.sv.heading(c,text=t);self.sv.column(c,width=w)
         self.sv.pack(fill="both",expand=True,padx=10,pady=10)
 
     def make_history(self):
@@ -70,7 +75,7 @@ class App(tk.Tk):
     def refresh_stock(self):
         self.products=[dict(x) for x in self.c.execute("SELECT * FROM products ORDER BY name")]
         self.sv.delete(*self.sv.get_children())
-        for p in self.products:self.sv.insert("","end",values=(p["barcode"],p["name"],rp(p["price"]),p["stock"]))
+        for p in self.products:self.sv.insert("","end",values=(p["barcode"],p["name"],p["category"],p["unit"],rp(p["price"]),p["stock"]))
 
     def refresh_history(self):
         self.hv.delete(*self.hv.get_children())
@@ -91,6 +96,43 @@ class App(tk.Tk):
             self.refresh_stock()
         except (ValueError,sqlite3.IntegrityError):
             messagebox.showerror("Data tidak valid","Periksa nama, harga, stok, dan barcode. Harga/stok harus angka positif.")
+
+
+    def import_csv(self):
+        path = filedialog.askopenfilename(title="Pilih katalog produk CSV", filetypes=[("CSV", "*.csv")])
+        if not path:
+            return
+        added = updated = 0
+        try:
+            with open(path, newline="", encoding="utf-8-sig") as f:
+                reader = csv.DictReader(f)
+                required = {"nama", "harga_jual"}
+                if not reader.fieldnames or not required.issubset(set(reader.fieldnames)):
+                    raise ValueError("CSV wajib memiliki kolom nama dan harga_jual.")
+                with self.c:
+                    for row in reader:
+                        name = (row.get("nama") or "").strip()
+                        if not name:
+                            continue
+                        raw_price = (row.get("harga_jual") or "0").replace(".", "").replace("Rp", "").strip()
+                        price = int(raw_price)
+                        if price < 0:
+                            raise ValueError("Harga tidak boleh negatif: " + name)
+                        category = (row.get("kategori") or "").strip()
+                        unit = (row.get("satuan") or "pcs").strip()
+                        brand = (row.get("merek") or "").strip()
+                        barcode = (row.get("barcode") or "").strip() or None
+                        existing = self.c.execute("SELECT id FROM products WHERE name=? COLLATE NOCASE", (name,)).fetchone()
+                        if existing:
+                            self.c.execute("UPDATE products SET price=?, category=?, unit=?, brand=? WHERE id=?", (price, category, unit, brand, existing["id"]))
+                            updated += 1
+                        else:
+                            self.c.execute("INSERT INTO products(barcode,name,price,stock,category,unit,brand) VALUES(?,?,?,?,?,?,?)", (barcode,name,price,0,category,unit,brand))
+                            added += 1
+            self.refresh_stock()
+            messagebox.showinfo("Impor selesai", f"Produk baru: {added}\\nData diperbarui: {updated}\\nStok produk baru: 0 (isi sesuai stok nyata).")
+        except (ValueError, sqlite3.Error, OSError) as e:
+            messagebox.showerror("Impor gagal", str(e))
 
     def add(self):
         q=self.q.get().strip()
