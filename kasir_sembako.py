@@ -10,11 +10,13 @@ DB = Path(__file__).with_name("kasir.db")
 def connect():
     c = sqlite3.connect(DB)
     c.row_factory = sqlite3.Row
-    c.execute("CREATE TABLE IF NOT EXISTS products(id INTEGER PRIMARY KEY, barcode TEXT UNIQUE, name TEXT NOT NULL, price INTEGER NOT NULL, stock INTEGER NOT NULL, category TEXT DEFAULT '', unit TEXT DEFAULT 'pcs', brand TEXT DEFAULT '')")
+    c.execute("CREATE TABLE IF NOT EXISTS products(id INTEGER PRIMARY KEY, barcode TEXT UNIQUE, name TEXT NOT NULL, price INTEGER NOT NULL, stock INTEGER NOT NULL, category TEXT DEFAULT '', unit TEXT DEFAULT 'pcs', brand TEXT DEFAULT '', image_url TEXT DEFAULT '')")
     cols = {row[1] for row in c.execute("PRAGMA table_info(products)")}
     for col, definition in (("category", "TEXT DEFAULT ''"), ("unit", "TEXT DEFAULT 'pcs'"), ("brand", "TEXT DEFAULT ''")):
         if col not in cols:
             c.execute("ALTER TABLE products ADD COLUMN " + col + " " + definition)
+    if "image_url" not in cols:
+        c.execute("ALTER TABLE products ADD COLUMN image_url TEXT DEFAULT ''")
     c.execute("CREATE TABLE IF NOT EXISTS sales(id INTEGER PRIMARY KEY, created TEXT, total INTEGER, paid INTEGER, change_due INTEGER)")
     c.execute("CREATE TABLE IF NOT EXISTS sale_items(id INTEGER PRIMARY KEY, sale_id INTEGER, product_id INTEGER, name TEXT, qty INTEGER, price INTEGER, subtotal INTEGER)")
     c.commit()
@@ -121,13 +123,14 @@ class App(tk.Tk):
                         category = (row.get("kategori") or "").strip()
                         unit = (row.get("satuan") or "pcs").strip()
                         brand = (row.get("merek") or "").strip()
+                        image_url = (row.get("gambar_url") or "").strip()
                         barcode = (row.get("barcode") or "").strip() or None
                         existing = self.c.execute("SELECT id FROM products WHERE name=? COLLATE NOCASE", (name,)).fetchone()
                         if existing:
-                            self.c.execute("UPDATE products SET price=?, category=?, unit=?, brand=? WHERE id=?", (price, category, unit, brand, existing["id"]))
+                            self.c.execute("UPDATE products SET price=?, category=?, unit=?, brand=?, image_url=?, barcode=COALESCE(?, barcode) WHERE id=?", (price, category, unit, brand, image_url, barcode, existing["id"]))
                             updated += 1
                         else:
-                            self.c.execute("INSERT INTO products(barcode,name,price,stock,category,unit,brand) VALUES(?,?,?,?,?,?,?)", (barcode,name,price,0,category,unit,brand))
+                            self.c.execute("INSERT INTO products(barcode,name,price,stock,category,unit,brand,image_url) VALUES(?,?,?,?,?,?,?,?)", (barcode,name,price,0,category,unit,brand,image_url))
                             added += 1
             self.refresh_stock()
             messagebox.showinfo("Impor selesai", f"Produk baru: {added}\\nData diperbarui: {updated}\\nStok produk baru: 0 (isi sesuai stok nyata).")
