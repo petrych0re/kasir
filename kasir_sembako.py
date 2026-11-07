@@ -49,7 +49,7 @@ class App(tk.Tk):
         ttk.Button(pay,text="Selesaikan transaksi",command=self.checkout).pack(side="left")
 
     def make_stock(self):
-        form=ttk.LabelFrame(self.stock,text="Tambah / perbarui produk");form.pack(fill="x",pad=10)
+        form=ttk.LabelFrame(self.stock,text="Tambah / perbarui produk");form.pack(fill="x",padx=10, pady=10)
         self.vars=[tk.StringVar() for _ in range(4)]
         for i,(label,var) in enumerate(zip(("Barcode","Nama","Harga jual","Stok"),self.vars)):
             ttk.Label(form,text=label).grid(row=0,column=i,padx=5)
